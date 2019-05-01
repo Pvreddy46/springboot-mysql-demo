@@ -1,0 +1,57 @@
+
+<div class="container">
+    <h2>Regstration</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm)">
+
+        <div class="row"  *ngIf="userRegStatus; else elseBlock">
+        <div class="col-xs-12">
+          <p class="alert alert-success">
+              <strong>Registration Success!</strong> Please <button type="submit" class="btn btn-link" (click)="redirectToLogin()">click</button> here to login!.
+
+          </p>
+        </div>
+        <!--<button class="btn btn-success">Add user</button>-->
+      </div>
+
+        
+     <ng-template #elseBlock>
+        <div class="form-group">
+            <label for="username">First Name</label>
+            <input type="text" class="form-control" formControlName="firstName" id="firstName"
+                 >
+        </div>
+         <div class="form-group">
+             <label for="username">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastName" id="lastName"
+                 >
+        </div>
+        <div class="form-group">
+            <label for="username">User Name</label>
+            <input type="text" class="form-control" formControlName="userName"  id="userName"
+                [attr.disabled]="data.userName"  >
+        </div>
+        <div class="form-group">
+             <label for="username">Password</label>
+            <input type="text" class="form-control" formControlName="pwd" id="pwd">
+        </div>
+         <div class="form-group">
+             <label for="username">User Role</label>
+            <input type="text" class="form-control" formControlName="userRole" id="userRole">
+        </div>
+
+          <div class="form-group">
+             <label for="emailId">Email Id</label>
+            <input type="text" class="form-control" formControlName="emailId" id="emailId">
+        </div>
+          <div class="form-group">
+             <label for="mobileNum">Mobile Number</label>
+            <input type="text" class="form-control" formControlName="mobileNum" id="mobileNum">
+        </div>
+
+
+        <button type="submit" class="btn btn-primary"  >Submit</button>
+        <button type="button" class="btn btn-secondary mx-5" (click)="redirectToLogin()">Cancel</button>
+    </ng-template>
+                
+    </form>
+</div>

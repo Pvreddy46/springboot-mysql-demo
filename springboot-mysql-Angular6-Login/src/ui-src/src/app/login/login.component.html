@@ -1,0 +1,20 @@
+<div>
+   <form (ngSubmit)="onSubmitLogin(loginForm)" #loginForm="ngForm">
+        <table >
+            <tr>
+                <td><label>UserName :</label></td> 
+                <td><input type="text" id="userName" name="userName" required [(ngModel)]="credentials.userName" ></td>
+            </tr>
+            <tr>
+                <td><label>Password : </label></td>
+                <td><input type="password" id="pwd" name="pwd" required [(ngModel)]="credentials.pwd" ></td>
+            </tr>
+            
+            <tr>
+                <button type="submit" [disabled]="!loginForm.valid">submit</button><br />
+            </tr>
+            
+        </table>
+        
+    </form>
+</div>
