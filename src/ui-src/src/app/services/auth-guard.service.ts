@@ -1,30 +1,31 @@
 import { Injectable } from '@angular/core';
-import { CanActivate } from '@angular/router/src/utils/preactivation';
-import { Appservice } from './app.services';
-import { Router, RouterStateSnapshot, ActivatedRouteSnapshot } from '@angular/router';
+import { UserInfoService } from './user-info.service';
 
-@Injectable({
-    providedIn: 'root'
-})
-export class AuthGuardService implements CanActivate {
-    path: ActivatedRouteSnapshot[];
-    route: ActivatedRouteSnapshot;
+import { Router, CanActivate, CanActivateChild, ActivatedRouteSnapshot, RouterStateSnapshot } from '@angular/router';
 
-    constructor(private app: Appservice, private router: Router) { }
+
+@Injectable()
+export class AuthGuard implements CanActivate {
+
+    constructor(private userInfoService: UserInfoService, private router: Router) { }
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
         let url: string = state.url;
-
-
-        if (localStorage.getItem('currentUser')) {
-            return true;
-        }
-
-        // navigate to login page
-        this.router.navigate(['/login']);
-        // you can save redirect url so after authing we can move them back to the page they requested
-        return false;
+        return this.checkLogin(url);
     }
 
+    canActivateChild(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
+        return this.canActivate(route, state);
+    }
 
+    checkLogin(url: string): boolean {
+        if (this.userInfoService.isLoggedIn()) {
+            return true;
+        }
+        console.log("User is not logged - This routing guard prvents redirection to any routes that needs logging.");
+        //Store the original url in login service and then redirect to login page
+        //this.loginService.landingPage = url;
+        this.router.navigateByUrl('/login');
+        return false;
+    }
 }

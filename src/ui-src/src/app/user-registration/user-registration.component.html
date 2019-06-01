@@ -1,6 +1,6 @@
 
 <div class="container">
-    <h2>Regstration</h2>
+    <h2>Add User</h2>
     <form [formGroup]="registerForm" (ngSubmit)="registerUser(registerForm)">
 
         <div class="row"  *ngIf="userRegStatus; else elseBlock">
@@ -13,45 +13,163 @@
         <!--<button class="btn btn-success">Add user</button>-->
       </div>
 
-        
+
      <ng-template #elseBlock>
-        <div class="form-group">
-            <label for="username">First Name</label>
-            <input type="text" class="form-control" formControlName="firstName" id="firstName"
+
+        <div class="row">
+            <div class="col-xs-4">
+              <label for="firstname" class="control-label">First Name</label>
+              <div class="input-group add-on">
+                  <span class="input-group-addon">
+                      <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="First Name">
+                        <i class='glyphicon glyphicon-user'></i>
+                      </a>
+                    </span>
+                    <input type="text" formControlName="firstname" id="firstname" value="" class="form-control input-sm" />
+
+              </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4">
+              <label for="lastname" class="control-label">Last Name</label>
+              <div class="input-group add-on">
+                  <span class="input-group-addon">
+                      <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Last Name">
+                        <i class='glyphicon glyphicon-user'></i>
+                      </a>
+                    </span>
+                    <input type="text" formControlName="lastname" value="" class="form-control input-sm" id="lastname">
+
+              </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4">
+              <label for="username" class="control-label">User Name</label>
+              <div class="input-group add-on">
+                  <span class="input-group-addon">
+                      <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="User Name">
+                        <i class='glyphicon glyphicon-user'></i>
+                      </a>
+                    </span>
+                    <input type="text" formControlName="username" value="" class="form-control input-sm"  id="username" >
+
+              </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4">
+              <label for="password" class="control-label">Password</label>
+              <div class="input-group add-on">
+                  <span class="input-group-addon">
+                      <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Password">
+                        <i class='glyphicon glyphicon-lock'></i>
+                      </a>
+                    </span>
+                    <input type="text" formControlName="password" value="" class="form-control input-sm" id="password">
+              </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4">
+              <label for="userrole" class="control-label">User Role</label>
+              <div class="input-group add-on">
+                  <span class="input-group-addon">
+                      <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="User Role">
+                        <i class='glyphicon glyphicon-user'></i>
+                      </a>
+                    </span>
+                    <select formControlName="role" value="" class="form-control input-sm" (change)="selected($event.target.value)" [(ngModel)]="selectedLevel">
+                        <option [ngValue]="role" *ngFor="let role of roles">{{role}}</option>
+                      </select>
+
+                      <!-- <select  name="role" ngModel (change)="selected($event.target.value)">
+                          <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+                         </select> -->
+              </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4">
+              <label for="email" class="control-label">Email Id</label>
+              <div class="input-group add-on">
+                  <span class="input-group-addon">
+                      <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Email Id">
+                        <i class='glyphicon glyphicon-envelope'></i>
+                      </a>
+                    </span>
+                    <input type="text" formControlName="email" value="" class="form-control input-sm" id="email">
+              </div>
+            </div>
+        </div>
+        <br />
+
+        <div class="row">
+            <div class="col-xs-4">
+              <label for="mobile" class="control-label">Mobile Number</label>
+              <div class="input-group add-on">
+                  <span class="input-group-addon">
+                      <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Mobile Number">
+                        <i class='glyphicon glyphicon-earphone'></i>
+                      </a>
+                    </span>
+                    <input type="text" formControlName="mobile" value="" class="form-control input-sm" id="mobile">
+              </div>
+            </div>
+        </div>
+        <br />
+
+        <!-- <div class="form-group">
+            <label for="firstname">First Name</label>
+            <input type="text" class="form-control" formControlName="firstname" id="firstname"
                  >
         </div>
          <div class="form-group">
-             <label for="username">Last Name</label>
-                <input type="text" class="form-control" formControlName="lastName" id="lastName"
-                 >
+             <label for="lastname">Last Name</label>
+                <input type="text" class="form-control" formControlName="lastname" id="lastname">
         </div>
         <div class="form-group">
             <label for="username">User Name</label>
-            <input type="text" class="form-control" formControlName="userName"  id="userName"
-                [attr.disabled]="data.userName"  >
+            <input type="text" class="form-control" formControlName="username"  id="username" >
         </div>
         <div class="form-group">
-             <label for="username">Password</label>
-            <input type="text" class="form-control" formControlName="pwd" id="pwd">
+             <label for="password">Password</label>
+            <input type="text" class="form-control" formControlName="password" id="password">
         </div>
          <div class="form-group">
-             <label for="username">User Role</label>
-            <input type="text" class="form-control" formControlName="userRole" id="userRole">
+
+            <label for="userrole">User Role</label>
+            <select formControlName="role" class="form-control">
+              <option [value]="role" *ngFor="let role of roles">{{role}}</option>
+            </select>
+
+
         </div>
 
           <div class="form-group">
-             <label for="emailId">Email Id</label>
-            <input type="text" class="form-control" formControlName="emailId" id="emailId">
+             <label for="email">Email Id</label>
+            <input type="text" class="form-control" formControlName="email" id="email">
         </div>
           <div class="form-group">
-             <label for="mobileNum">Mobile Number</label>
-            <input type="text" class="form-control" formControlName="mobileNum" id="mobileNum">
-        </div>
+             <label for="mobile">Mobile Number</label>
+            <input type="text" class="form-control" formControlName="mobile" id="mobile">
+        </div> -->
 
 
-        <button type="submit" class="btn btn-primary"  >Submit</button>
+       <br /> <button type="submit" class="btn btn-primary"  >Submit</button>
         <button type="button" class="btn btn-secondary mx-5" (click)="redirectToLogin()">Cancel</button>
     </ng-template>
-                
+
     </form>
 </div>

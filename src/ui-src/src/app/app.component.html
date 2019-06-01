@@ -1,14 +1,19 @@
-
-<!--  <user-login></user-login>
-
-<br />
-
-<app-login-page></app-login-page>
-<form-login></form-login> 
-
-<app-login-page></app-login-page>
--->
-
-
- <app-navigation></app-navigation>
-<router-outlet></router-outlet>
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">GIB</a>
+    </div>
+    <ul class="nav navbar-nav" routerLinkActive="active">
+      <!-- <li class="nav-item"><a class="nav-link" routerLink="home">Home</a></li> -->
+      <li class="nav-item" *ngFor="let link of links">
+        <a class="nav-link" [routerLink]="link.path">{{ link.text }}</a>
+      </li>
+      <li class="nav-item" *ngIf="isLoggedIn">
+        <a class="nav-link" routerLink="logout" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+<div>
+  <router-outlet></router-outlet>
+</div>
