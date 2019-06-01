@@ -1,0 +1,33 @@
+<div class="container">
+
+
+  <h2>Two FA</h2>
+
+  <div class="row" *ngIf="errorMsgFlag">
+      <div class="col-xs-12">
+          <p class="alert alert-danger">
+              <strong>{{errorMsg}}</strong>
+          </p>
+      </div>
+  </div>
+
+
+  <form [formGroup]="twoFaForm" (ngSubmit)="validateTwoFa(twoFaForm)">
+      <div class="row">
+          <div class="col-xs-4">
+            <label for="otp" class="control-label">OTP</label>
+            <div class="input-group add-on">
+                <span class="input-group-addon">
+                    <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="OTP">
+                      <i class='glyphicon glyphicon-lock'></i>
+                    </a>
+                  </span>
+                  <input type="text" value=""  class="form-control input-sm" formControlName="otp" id="otp">
+            </div>
+          </div>
+      </div>
+      <br />
+      <button type="submit" class="btn btn-primary">Validate OTP</button>
+      <button type="submit" class="btn btn-link" (click)="redirectToLogin()">Cancel</button>
+  </form>
+</div>

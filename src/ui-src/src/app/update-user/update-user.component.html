@@ -1,0 +1,178 @@
+
+<div class="container">
+<h3>Update User</h3>
+
+<form [formGroup]="form" (ngSubmit)="submit()">
+
+  <div class="row">
+    <div class="col-xs-4">
+      <label for="firstname" class="control-label">First Name</label>
+      <div class="input-group add-on">
+          <span class="input-group-addon">
+              <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="First Name">
+                <i class='glyphicon glyphicon-user'></i>
+              </a>
+            </span>
+            <input type="text" formControlName="firstname" id="firstname" value="" class="form-control input-sm" />
+
+      </div>
+    </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="col-xs-4">
+    <label for="lastname" class="control-label">Last Name</label>
+    <div class="input-group add-on">
+        <span class="input-group-addon">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Last Name">
+              <i class='glyphicon glyphicon-user'></i>
+            </a>
+          </span>
+          <input type="text" formControlName="lastname" value="" class="form-control input-sm" id="lastname">
+
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="col-xs-4">
+    <label for="username" class="control-label">User Name</label>
+    <div class="input-group add-on">
+        <span class="input-group-addon">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="User Name">
+              <i class='glyphicon glyphicon-user'></i>
+            </a>
+          </span>
+          <input type="text" formControlName="username" value="" class="form-control input-sm"  id="username" >
+
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="row">
+  <div class="col-xs-4">
+    <label for="password" class="control-label">Password</label>
+    <div class="input-group add-on">
+        <span class="input-group-addon">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Password">
+              <i class='glyphicon glyphicon-lock'></i>
+            </a>
+          </span>
+          <input type="text" formControlName="password" value="" class="form-control input-sm" id="password">
+    </div>
+  </div>
+</div>
+<br />
+
+  <div class="row">
+    <div class="col-xs-4">
+      <label for="userrole" class="control-label">User Role</label>
+      <div class="input-group add-on">
+          <span class="input-group-addon">
+              <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="User Role">
+                <i class='glyphicon glyphicon-user'></i>
+              </a>
+            </span>
+            <select formControlName="role" id="role" value="" class="form-control input-sm" >
+                <option value="{{role}}" [ngValue]="role" *ngFor="let role of roles">{{role}}</option>
+              </select>
+
+              <!-- <select  name="role" ngModel (change)="selected($event.target.value)">
+                  <option *ngFor="let r of roles" [value]="r">{{r}}</option>
+                 </select> -->
+      </div>
+    </div>
+</div>
+<br />
+
+
+<div class="row">
+  <div class="col-xs-4">
+    <label for="age" class="control-label">Age</label>
+    <div class="input-group add-on">
+        <span class="input-group-addon">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Age">
+              <i class='glyphicon glyphicon-user'></i>
+            </a>
+          </span>
+          <input type="number" formControlName="age" value="" class="form-control input-sm" id="age">
+    </div>
+  </div>
+</div>
+<br />
+
+
+<div class="row">
+  <div class="col-xs-4">
+    <label for="dob" class="control-label">Date Of Birth</label>
+    <div class="input-group add-on">
+        <span class="input-group-addon">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Date of Birth">
+              <i class='glyphicon glyphicon-user'></i>
+            </a>
+          </span>
+          <input type="date" formControlName="dob" value="" class="form-control input-sm" id="dob">
+    </div>
+  </div>
+</div>
+<br />
+
+  <!-- checkbox input in angular forms -->
+  <!-- <label class="checkbox-wrapper">
+    <input formControlName="subscribe" type="checkbox" />
+    Subscribe (type="checkbox")
+  </label> -->
+
+  <!-- select input in angular forms -->
+  <!-- <label for="memory">Memory (select)</label>
+  <select formControlName="memory" id="memory" >
+    <option value="16">16 Gigabytes</option>
+    <option value="32">32 Gigabytes</option>
+    <option value="64">64 Gigabytes</option>
+    <option value="128">128 Gigabytes</option>
+  </select> -->
+
+
+<!--
+<div class="row">
+  <div class="col-xs-4">
+    <label for="dob" class="control-label">Distance</label>
+    <div class="input-group add-on">
+        <span class="input-group-addon">
+            <a class='my-tool-tip' data-toggle="tooltip" data-placement="left" title="Distance">
+              <i class='glyphicon glyphicon-lock'></i>
+            </a>
+          </span>
+          <input type="range" formControlName="distance" value="" class="form-control input-sm" id="distance"  min="0" max="100">
+    </div>
+  </div>
+</div>
+<br /> -->
+
+<div class="row">
+  <div class="col-xs-4">
+    <label for="gender" class="control-label">Gender</label>
+    <div class="input-group add-on">
+
+          <label>
+            <input formControlName="gender" type="radio" name="gender" value="Male" />
+            Male
+          </label>
+          <label>
+            <input formControlName="gender" type="radio" name="gender" value="Female" />
+            Female
+          </label>
+
+    </div>
+  </div>
+</div>
+<br />
+
+<button type="submit" class="btn btn-primary"  >Submit</button>
+<button type="button" class="btn btn-secondary mx-5" (click)="redirectToUserList()">Back</button>
+
+</form>
+</div>
