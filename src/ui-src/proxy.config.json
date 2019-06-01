@@ -1,0 +1,41 @@
+{
+  "/dbdemo/*": {
+    "target": "http://localhost:9090",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/proxy" : ""}
+  },
+
+ "/logout": {
+    "target": "http://localhost:9090",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/proxy" : ""}
+  },
+ "/user": {
+    "target": "http://localhost:9090",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/proxy" : ""}
+  },
+ 
+ "/terms_and_condition": {
+   "target": "http://localhost:9090",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/proxy" : ""}
+ },
+
+ "/token": {
+    "target": "http://localhost:9090",
+    "secure": false,
+    "logLevel": "debug",
+    "changeOrigin": true,
+    "pathRewrite": {"^/proxy" : ""}
+  }
+   
+}

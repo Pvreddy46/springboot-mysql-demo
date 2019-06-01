@@ -1,0 +1,20 @@
+<div>
+   <form [formGroup]="credentials" (ngSubmit)="onSubmitReactLogin(credentials)">
+        <table >
+            <tr>
+                <td><label>UserName :</label></td> 
+                <td><input type="text" id="userName" name="userName" required formControlName="userName" ></td>
+            </tr>
+            <tr>
+                <td><label>Password : </label></td>
+                <td><input type="password" id="pwd" name="pwd" required formControlName="pwd" ></td>
+            </tr>
+            
+            <tr>
+                <button type="submit" [disabled]="!credentials.valid">submit</button><br />
+            </tr>
+            
+        </table>
+        
+    </form>
+</div>
