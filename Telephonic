@@ -8,3 +8,18 @@ Telephonic
 6.  How do you make a class Immutable in Java?
 7.  Which data type you should use to represent currency in Java? 
 8.  When to use abstract class and interface in Java? 
+9.  Difference between Hashtable and HashMap in Java? 
+10. What is the difference between ArrayList and LinkedList in Java?
+11. What is the difference between Overloading and Overriding in Java?
+12. What kind of reference types are exists in Java? Differences? 
+13. Difference between checked and unchecked exception in Java? 
+14. What is a volatile variable in Java?
+15. What is the difference between CountDownLatch and CyclicBarrier in Java? 
+16. Does BlockingQueue is thread-safe in Java? 
+17. Why wait and notify method should be called in a loop? 
+18. What is the difference between "ABC".equals(unknown string) and (unknown string).equals("ABC")? 
+19. What is the difference between the Serializable and Externalizable interface in Java? 
+20. Can Enum types implement interface in Java? (Yes),  Can Enum extend a class in Java? (No)
+21. How to prevent your class from being subclassed?
+22. Can we override a static method in Java?
+23. What is the difference between StringBuffer and StringBuilder in Java?
