@@ -1,11 +1,16 @@
 
 Collection Interview 
 
-1. How does HashMap work in Java?
-2. What is the difference between fail-fast and fail-safe Iterators?
-3. What is the difference between Synchronized Collection and Concurrent Collection?
-4. What is the difference between Iterator and Enumeration? 
-5. What do you need to do to use a custom object as a key in Collection classes like Map or Set?
-6. The difference between HashMap and Hashtable?
-7. When do you use ConcurrentHashMap in Java?
+1.  How does HashMap work in Java?
+2.  What is the difference between fail-fast and fail-safe Iterators?
+3.  What is the difference between Synchronized Collection and Concurrent Collection?
+4.  What is the difference between Iterator and Enumeration? 
+5.  What do you need to do to use a custom object as a key in Collection classes like Map or Set?
+6.  The difference between HashMap and Hashtable?
+7.  When do you use ConcurrentHashMap in Java?
+8.  What is the difference between Vector and ArrayList?
+9.  What is the difference between HashMap and HashSet? 
+10. Which one you will prefer between Array and ArrayList for Storing object and why?
+11. When does ConcurrentModificationException occur on iteration?
+12. Difference between Set, List and Map Collection classes?
 
